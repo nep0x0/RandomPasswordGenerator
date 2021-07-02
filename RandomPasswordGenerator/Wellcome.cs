@@ -8,7 +8,7 @@ namespace RandomPasswordGenerator
 	{
 		public void ShowForm()
 		{
-			Console.WriteLine("==PASSWORD GENERATOR by Nep==");
+			Console.WriteLine("==PASSWORD GENERATOR==");
 			Console.WriteLine(" ");
 
 			Console.Write("Input length : ");
