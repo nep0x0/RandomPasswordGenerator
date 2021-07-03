@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace RandomPasswordGenerator
 {
 	class Wellcome : Generator
 	{
 		public void ShowForm()
 		{
-			Console.WriteLine("==PASSWORD GENERATOR==");
-			Console.WriteLine(" ");
+			string tittle = "==PASSWORD GENERATOR==\n";
+
+
+			Console.WriteLine(tittle);
 
 			Console.Write("Input length : ");
 			//int length = int.Parse(Console.ReadLine()) - 2; //input panjang password yang diinginkan user , dikurangi 2 karena ini untuk menyisakan dua kursi kosong untuk karakter symbol
@@ -19,7 +22,9 @@ namespace RandomPasswordGenerator
 			bool success = int.TryParse(input, out inputValue);
             while (!success)
             {
-				Console.WriteLine("Invalid Input, Try again...");
+				Console.Clear();
+				Console.WriteLine(tittle);
+				Console.WriteLine("Invalid Input, Try to input a Number...\n");
 				Console.Write("Input length: ");
 				input = Console.ReadLine();
 				success = int.TryParse(input, out inputValue);

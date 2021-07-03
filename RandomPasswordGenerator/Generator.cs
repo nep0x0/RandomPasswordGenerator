@@ -26,7 +26,7 @@ namespace RandomPasswordGenerator
 		//Ini adalah method string acak baris 2 terakhir akan menghasilkan karakter symbol, dimana password yang kuat memerlukan setidaknya 1 atau 2 symbl
 		public static string GetRandomPassword2(int length)
 		{
-			const string chars = "!@#$%^&*()-_=+[],.{}:<>?"; // Symbol yang akan di acak
+			const string chars = " !\"#$%&'()*+,-./:;<=>?@[]\\^_`{|}~"; // Symbol yang akan di acak
 
 			StringBuilder sb = new StringBuilder();
 			Random rnd = new Random();
