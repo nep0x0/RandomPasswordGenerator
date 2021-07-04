@@ -7,32 +7,26 @@ namespace RandomPasswordGenerator
 {
 	class Wellcome : Generator
 	{
-		public static string tittle = "==PASSWORD GENERATOR==\n";
-		public static string input;
-		public static bool success;
-		public static int inputValue;
+		public string tittle = "==PASSWORD GENERATOR==\n";
+		public string inputForm = "Input length : ";
+		public string input;
+		public bool success;
+		public int inputValue;
 		public void ShowForm()
 		{
-			
+
+			Console.SetCursorPosition((Console.WindowWidth - this.tittle.Length) / 2, Console.CursorTop);
 			Console.WriteLine(tittle);
-			Console.Write("Input length : ");
-		
+			Console.Write(inputForm);
 			input = Console.ReadLine();
 			success = int.TryParse(input, out inputValue);
 			
             while (!success)
             {
 				isValid();
-				/*Console.Clear();
-				Console.WriteLine(tittle);
-				Console.WriteLine("Invalid Input, Try to input a Number...\n");
-				Console.Write("Input length: ");
-				input = Console.ReadLine();
-				success = int.TryParse(input, out inputValue);*/
             }
 
 			string password = GetRandomPassword(inputValue - 2); // variable penampung hasil dari getrandompassowrd 1(karakter angka dan huruf), inputnya sesuai lenght yang di inginkan user lalu di kurangi 2
-
 			string password2 = GetRandomPassword2(2); //variable penampung hasil dari getrandompassord2 (karakter symbol) inputnya selalu dua karena menurut kami 2 symbol dalam password itu akan membuat password cukup aman
 
 			Console.WriteLine("\nYour password is " + password + password2);
@@ -41,12 +35,13 @@ namespace RandomPasswordGenerator
 			Console.ReadKey();
 		}
 
-		public static void isValid()
+		public void isValid()
         {
 				Console.Clear();
+				Console.SetCursorPosition((Console.WindowWidth - this.tittle.Length) / 2, Console.CursorTop);
 				Console.WriteLine(tittle);
 				Console.WriteLine("Invalid Input, Try to input a Number...\n");
-				Console.Write("Input length: ");
+				Console.Write(inputForm);
 				input = Console.ReadLine();
 				success = int.TryParse(input, out inputValue);
 		}
