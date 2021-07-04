@@ -7,13 +7,13 @@ namespace RandomPasswordGenerator
 {
 	class Wellcome : Generator
 	{
+		public static string tittle = "==PASSWORD GENERATOR==\n";
 		public static string input;
 		public static bool success;
-		public static string tittle;
 		public static int inputValue;
 		public void ShowForm()
 		{
-			tittle = "==PASSWORD GENERATOR==\n";
+			
 			Console.WriteLine(tittle);
 			Console.Write("Input length : ");
 		
