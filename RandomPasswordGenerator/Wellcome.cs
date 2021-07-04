@@ -28,8 +28,9 @@ namespace RandomPasswordGenerator
 			string password = GetRandomPassword(inputValue - 2); // variable penampung hasil dari getrandompassowrd 1(karakter angka dan huruf), inputnya sesuai lenght yang di inginkan user lalu di kurangi 2
 			string password2 = GetRandomPassword2(2); //variable penampung hasil dari getrandompassord2 (karakter symbol) inputnya selalu dua karena menurut kami 2 symbol dalam password itu akan membuat password cukup aman
 			string password3 = password + password2;
+			string passwordResult = GetRandomPassword3(password3);
 
-			Console.WriteLine("\nYour password is " + password3);
+			Console.WriteLine("\nYour password is " + passwordResult);
 			Console.WriteLine(" ");
 			Console.WriteLine("Press any key to exit...");
 			Console.ReadKey();

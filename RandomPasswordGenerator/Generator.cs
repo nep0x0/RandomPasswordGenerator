@@ -40,6 +40,20 @@ namespace RandomPasswordGenerator
 			return sb.ToString(); // hasil acak symbol
 		}
 
+		public static string GetRandomPassword3(string password3)
+		{
+			string chars = password3; // Symbol yang akan di acak
 
+			StringBuilder sb = new StringBuilder();
+			Random rnd = new Random();
+
+			for (int i = 0; i < chars.Length; i++)
+			{
+				int indek = rnd.Next(chars.Length); //pengacak symbol
+				sb.Append(chars[indek]); //penampung hasil acak symbol
+			}
+
+			return sb.ToString(); // hasil acak symbol
+		}
 	}
 }
