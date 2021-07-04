@@ -7,27 +7,28 @@ namespace RandomPasswordGenerator
 {
 	class Wellcome : Generator
 	{
+		public static string input;
+		public static bool success;
+		public static string tittle;
+		public static int inputValue;
 		public void ShowForm()
 		{
-			string tittle = "==PASSWORD GENERATOR==\n";
-
-
+			tittle = "==PASSWORD GENERATOR==\n";
 			Console.WriteLine(tittle);
-
 			Console.Write("Input length : ");
-			//int length = int.Parse(Console.ReadLine()) - 2; //input panjang password yang diinginkan user , dikurangi 2 karena ini untuk menyisakan dua kursi kosong untuk karakter symbol
-
-			string input = Console.ReadLine();
-			int inputValue;
-			bool success = int.TryParse(input, out inputValue);
+		
+			input = Console.ReadLine();
+			success = int.TryParse(input, out inputValue);
+			
             while (!success)
             {
-				Console.Clear();
+				isValid();
+				/*Console.Clear();
 				Console.WriteLine(tittle);
 				Console.WriteLine("Invalid Input, Try to input a Number...\n");
 				Console.Write("Input length: ");
 				input = Console.ReadLine();
-				success = int.TryParse(input, out inputValue);
+				success = int.TryParse(input, out inputValue);*/
             }
 
 			string password = GetRandomPassword(inputValue - 2); // variable penampung hasil dari getrandompassowrd 1(karakter angka dan huruf), inputnya sesuai lenght yang di inginkan user lalu di kurangi 2
@@ -40,6 +41,15 @@ namespace RandomPasswordGenerator
 			Console.ReadKey();
 		}
 
+		public static void isValid()
+        {
+				Console.Clear();
+				Console.WriteLine(tittle);
+				Console.WriteLine("Invalid Input, Try to input a Number...\n");
+				Console.Write("Input length: ");
+				input = Console.ReadLine();
+				success = int.TryParse(input, out inputValue);
+		}
 	}
 
 }
