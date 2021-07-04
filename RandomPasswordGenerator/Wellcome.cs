@@ -31,7 +31,6 @@ namespace RandomPasswordGenerator
 			string passwordResult = GetRandomPassword3(password3);
 
 			Console.WriteLine("\nYour password is " + passwordResult );
-			Console.WriteLine("\nYour password is " + password3);
 			Console.WriteLine(" ");
 			Console.WriteLine("Press any key to exit...");
 			Console.ReadKey();
