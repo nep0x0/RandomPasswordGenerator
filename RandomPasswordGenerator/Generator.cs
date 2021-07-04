@@ -42,18 +42,19 @@ namespace RandomPasswordGenerator
 
 		public static string GetRandomPassword3(string password3)
 		{
-			string chars = password3; // Symbol yang akan di acak
-
-			StringBuilder sb = new StringBuilder();
-			Random rnd = new Random();
-
-			for (int i = 0; i < chars.Length; i++)
+			char[] array = password3.ToCharArray();
+			Random rng = new Random();
+			int n = array.Length;
+			while (n > 1)
 			{
-				int indek = rnd.Next(chars.Length); //pengacak symbol
-				sb.Append(chars[indek]); //penampung hasil acak symbol
+				n--;
+				int k = rng.Next(n + 1);
+				var value = array[k];
+				array[k] = array[n];
+				array[n] = value;
 			}
+			return new string(array);
 
-			return sb.ToString(); // hasil acak symbol
 		}
 	}
 }
